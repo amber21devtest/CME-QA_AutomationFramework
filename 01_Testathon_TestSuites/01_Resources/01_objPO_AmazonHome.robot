@@ -38,9 +38,10 @@ Enter UserName and Password
 		  Click Element    ${btn_submit}
      
 Amazon-web execution steps 
-    [Arguments]  ${URL}  ${BROWSER}   
-	     Open Browser  ${URL}  ${BROWSER}  
-	     Maximize Browser Window    
+    [Arguments]  ${URL}  ${BROWSER}
+      Run Keyword If    '${BROWSER}'== Firefox    Open Firefox in Desired Capability Mode
+      Run Keyword If    '${BROWSER}'!= Firefox    Open Browser  ${URL}  ${BROWSER}                  
+	  Maximize Browser Window    
      
 Amazon-mobile execution steps
     [Arguments]  ${URL}
@@ -49,4 +50,8 @@ Amazon-mobile execution steps
     Go To   ${URL}
   
     
+    
+Open Firefox in Desired Capability Mode
+           Set To Dictionary     ${FF_DESIRED_CAP}    marionette=${True}
+           Open Browser  ${URL}  ${BROWSER}   ${FF_DESIRED_CAP}  
 

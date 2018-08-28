@@ -11,10 +11,13 @@
 ${METHOD}  WEB                              # MOBILE/WEB 
 ${EMULATOR}  LOCAL                          # LOCAL/SAUCE
 ${URL}  https://www.amazon.in/
-${BROWSER}  chrome
+${BROWSER}  Firefox                          #chrome/Firefox 
 ${USERNAME}  amber21devtest@gmail.com    
 ${PASSWORD}  Welcome_01
-
+###############################################################################################
+#Desirecd capability for firefox
+###############################################################################################
+ ${FF_DESIRED_CAP}    Evaluate    sys.modules['selenium.webdriver'].common.desired_capabilities.DesiredCapabilities.FIREFOX    sys,selenium.webdriver
 ###############################################################################################
 #Mobile Connection set up varibales
 ###############################################################################################
