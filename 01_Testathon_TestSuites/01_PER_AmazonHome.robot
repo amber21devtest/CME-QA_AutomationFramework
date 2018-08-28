@@ -21,11 +21,11 @@ ${outputresults}  ${OUTPUT_DIR}
 
 TC1_justRunJMeter
     [Tags]    Performance
-    Run jmeter   ${jMeterStartup}  ${jmxFileLocation}  ${outputresults}TC1.jtl
+    Run jmeter   ${jMeterStartup}  ${jmxFileLocation}  ${outputresults}\TC1.jtl
     
 TC2_analyseAndConvertExistingJtlLog
     [Tags]    Performance
-    ${result}    analyse Jtl convert    ${outputresults}TC1.jtl
+    ${result}    analyse Jtl convert    ${outputresults}\TC1.jtl
     log    ${result}
     : FOR    ${ELEMENT}    IN    @{result}
     \    log dictionary    ${ELEMENT}
@@ -35,7 +35,7 @@ TC2_analyseAndConvertExistingJtlLog
     
 TC3_runJMeterAndAnalyseAndConvertLog
     [Tags]    Performance
-    ${result}    run jmeter analyse jtl convert    ${jMeterStartup}  ${jmxFileLocation}  ${outputresults}TC3.jtl  
+    ${result}    run jmeter analyse jtl convert    ${jMeterStartup}  ${jmxFileLocation}  ${outputresults}\TC3.jtl  
     log    ${result}
     :FOR    ${ELEMENT}    IN    @{result}
     \    log dictionary    ${ELEMENT}  
