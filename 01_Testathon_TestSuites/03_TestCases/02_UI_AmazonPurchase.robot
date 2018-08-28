@@ -8,9 +8,9 @@
 
 *** Settings ***
 Documentation    Test with  valid and invalid User IDs and Passwords
-Resource    ../00_Resources.robot
-Resource    01_Resources/01_objPO_AmazonHome.robot
-Resource    01_Resources/02_objPO_AmazonProductSearch.robot
+Resource    ../../00_Resources.robot
+Resource    ../01_Resources/01_objPO_AmazonHome.robot
+Resource    ../01_Resources/02_objPO_AmazonProductSearch.robot
 Test Teardown    Close Browser 
 
 *** Variables ***

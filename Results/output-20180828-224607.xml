@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180828 22:46:07.975" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite id="s1" name="01 PER AmazonHome">
+<suite source="D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFramework\01_Testathon_TestSuites\03_TestCases\01_PER_AmazonHome.robot" id="s1-s1" name="01 PER AmazonHome">
+<test id="s1-s1-t1" name="TC1_justRunJMeter">
+<kw name="Run Jmeter" library="JMeterLib">
+<doc>Runs JMeter. Returns None.</doc>
+<arguments>
+<arg>${jMeterStartup}</arg>
+<arg>${jmxFileLocation}</arg>
+<arg>${outputresults}TC1.jtl</arg>
+</arguments>
+<msg timestamp="20180828 22:47:26.420" level="INFO">Starting JMeter with following parameters:
+ - JMeter path: C:/Jmeter/bin/jmeter.bat
+ - Test plan path: D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFramework/01_Testathon_TestSuites/02_Inputs/AmazonLogin.jmx
+ - Log file path: D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFramework/Results/TC1.jtl
+ - Other parameters:  .
+subprocess.call input list: [u'C:/Jmeter/bin/jmeter.bat', '-n', '-t', u'D:\\00_Workspace\\04_RobotFrameWork\\01_Python\\CME-QA_AutomationFramework/01_Testathon_TestSuites/02_Inputs/AmazonLogin.jmx', '-l', u'D:\\00_Workspace\\04_RobotFrameWork\\01_Python\\CME-QA_AutomationFramework/Results/TC1.jtl']
+Value returned by JMeter: 0</msg>
+<status status="PASS" endtime="20180828 22:47:26.420" starttime="20180828 22:46:08.366"></status>
+</kw>
+<tags>
+<tag>Performance</tag>
+</tags>
+<status status="PASS" endtime="20180828 22:47:26.420" critical="yes" starttime="20180828 22:46:08.366"></status>
+</test>
+<status status="PASS" endtime="20180828 22:47:26.436" starttime="20180828 22:46:08.038"></status>
+</suite>
+<status status="PASS" endtime="20180828 22:47:26.436" starttime="20180828 22:46:07.991"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Performance</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="01 PER AmazonHome" pass="1">01 PER AmazonHome</stat>
+<stat fail="0" id="s1-s1" name="01 PER AmazonHome" pass="1">01 PER AmazonHome.01 PER AmazonHome</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
