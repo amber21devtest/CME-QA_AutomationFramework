@@ -3,7 +3,7 @@
 #Date Created : 08/28/2018
 #Date Modified : 08/28/2018
 #Modifications
-#Created the Login and checkout a select product
+##Created the Login and checkout a select product
 ########################################################################################
 
 *** Settings ***

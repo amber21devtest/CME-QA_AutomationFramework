@@ -3,7 +3,7 @@
 #Date Created : 08/28/2018
 #Date Modified : 08/28/2018
 #Modifications
-#Created the login fucntionality test case for Amazon site
+##Created the login fucntionality test case for Amazon site
 ########################################################################################
 
 *** Settings ***
