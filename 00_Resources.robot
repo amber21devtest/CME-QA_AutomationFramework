@@ -39,7 +39,7 @@ ${SEARCH_PRODUCT}  car for kids toys
 #Directories
 ###############################################################################################
 ${INPUT_DIR}  ${CURDIR}/01_Testathon_TestSuites/02_Inputs/
-${OUTPUT_RESULTS_DIR}  ${CURDIR}/Results/
+${OUTPUT_RESULTS_DIR}  ${CURDIR}\\Results\\
 #Out Put Dircetory should be the same as that of Robot Results Output in Jenkins
 ###############################################################################################
 #Executable locations
