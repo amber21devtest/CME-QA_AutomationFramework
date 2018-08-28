@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180828 20:40:25.596" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite source="D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFramework" id="s1" name="CME-QA AutomationFramework">
+<suite source="D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFramework\01_Testathon_TestSuites" id="s1-s1" name="01 Testathon TestSuites">
+<suite source="D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFramework\01_Testathon_TestSuites\01_PER_AmazonHome.robot" id="s1-s1-s1" name="01 PER AmazonHome">
+<test id="s1-s1-s1-t1" name="TC1_justRunJMeter">
+<kw name="Run Jmeter" library="JMeterLib">
+<doc>Runs JMeter. Returns None.</doc>
+<arguments>
+<arg>${jMeterStartup}</arg>
+<arg>${jmxFileLocation}</arg>
+<arg>${outputresults}TC1.jtl</arg>
+</arguments>
+<msg timestamp="20180828 20:41:42.309" level="INFO">Starting JMeter with following parameters:
+ - JMeter path: C:/Jmeter/bin/jmeter.bat
+ - Test plan path: D:/00_Workspace/04_RobotFrameWork/01_Python/CME-QA_AutomationFramework/01_Testathon_TestSuites/02_Inputs/AmazonLogin.jmx
+ - Log file path: D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC1.jtl
+ - Other parameters:  .
+subprocess.call input list: [u'C:/Jmeter/bin/jmeter.bat', '-n', '-t', u'D:/00_Workspace/04_RobotFrameWork/01_Python/CME-QA_AutomationFramework/01_Testathon_TestSuites/02_Inputs/AmazonLogin.jmx', '-l', u'D:\\00_Workspace\\04_RobotFrameWork\\01_Python\\CME-QA_AutomationFrameworkTC1.jtl']
+Value returned by JMeter: 0</msg>
+<status status="PASS" endtime="20180828 20:41:42.309" starttime="20180828 20:40:26.042"></status>
+</kw>
+<tags>
+<tag>Performance</tag>
+</tags>
+<status status="PASS" endtime="20180828 20:41:42.309" critical="yes" starttime="20180828 20:40:26.041"></status>
+</test>
+<test id="s1-s1-s1-t2" name="TC2_analyseAndConvertExistingJtlLog">
+<kw name="Analyse Jtl Convert" library="JMeterLib">
+<doc>Parses JMeter log file. Converts results into HTML and SQLite format.</doc>
+<arguments>
+<arg>${outputresults}TC1.jtl</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.263" level="INFO">Opening log file D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC1.jtl
+Log file format: csv
+Extracting samples and assertions from D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC1.jtl
+Calculating statistical values
+Creating html D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC1.jtl20180828151142.html
+Creating SQLite DB file D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC1.jtl20180828151142.sql</msg>
+<msg timestamp="20180828 20:41:48.263" level="INFO">${result} = [{'samplesSuccessRateNoAssert': 47, 'minTime': 76, 'assertions': 0, 'samples': 38, 'averageTime': 2113, 'maxTime': 25099, 'assertionPassRate': 0, 'samplesSuccessRateInclAssert': 47}, {'totalTime': 580...</msg>
+<status status="PASS" endtime="20180828 20:41:48.263" starttime="20180828 20:41:42.309"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.263" level="INFO">[{'samplesSuccessRateNoAssert': 47, 'minTime': 76, 'assertions': 0, 'samples': 38, 'averageTime': 2113, 'maxTime': 25099, 'assertionPassRate': 0, 'samplesSuccessRateInclAssert': 47}, {'totalTime': 580.049, 'samplesErrorInclAssert': 0, 'sampleName': 'http://amazon.in/', 'averageBytes': 906139, 'median': 7008, 'bytesPerSec': 3124.355011386969, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 30, 59, 610000), 'timeTable': [8099, 5917], 'percentil90': 8099, 'endTime': datetime.datetime(2018, 8, 28, 20, 40, 34, 659000), 'kBytesPerSec': '3.1', 'stddev': '1091.0', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 572.877, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390582520&amp;rId=3ERX6ZAB16V7GPQBF0MP&amp;mkId=A21TJRUUN4KGV&amp;h=775050bde76a65e0363a9972a29097b899541b8b4aa8c7c64529719e61c1035c', 'averageBytes': 634, 'median': 302, 'bytesPerSec': 2.213389610684318, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 12, 232000), 'timeTable': [302, 303], 'percentil90': 303, 'endTime': datetime.datetime(2018, 8, 28, 20, 40, 45, 109000), 'kBytesPerSec': '0.0', 'stddev': '0.7', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 572.881, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/aq-feedback/lazyLoad/handler/af-link-handler.html?pl=%7B%22adPlacementMetaData%22%3A%7B%22pageUrl%22%3A%22aHR0cHM6Ly93d3cuYW1hem9uLmluL3Nob3BwaW5nUG9ydGFsL2Rlc2t0b3AvcmVmPW5hdl9jdXN0cmVjX3NpZ25pbj9fZW5jb2Rpbmc9VVRGOCZvcGZfcmVkaXI9MQ%3D%3D%22%2C%22adElementId%22%3A%22ape_Gateway_right-2_desktop_placement%22%2C%22pageType%22%3A%22Gateway%22%2C%22slotName%22%3A%22right-2%22%7D%2C%22adCreativeMetaData%22%3A%7B%22adProgramId%22%3A%221004%22%2C%22adImpressionId%22%3A%22https%3A%2F%2Faax-eu.amazon-adsystem.com%2Fe%2Fxsp%2Fimp%3Fb%3DQnw3kiy1tWO841DD1qb8Ta4AAAFlfGetFQMAAAH_AfiNSxE%22%2C%22adCreativeId%22%3A%226996784002%22%2C%22adId%22%3A%222831561602%22%2C%22adNetwork%22%3A%22cs%22%7D%7D', 'averageBytes': 2242, 'median': 312, 'bytesPerSec': 7.82710545471049, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 12, 539000), 'timeTable': [322, 303], 'percentil90': 322, 'endTime': datetime.datetime(2018, 8, 28, 20, 40, 45, 420000), 'kBytesPerSec': '0.0', 'stddev': '9.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 572.865, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/overlay/display.html', 'averageBytes': 1088, 'median': 239, 'bytesPerSec': 3.798451642184459, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 12, 863000), 'timeTable': [248, 230], 'percentil90': 248, 'endTime': datetime.datetime(2018, 8, 28, 20, 40, 45, 728000), 'kBytesPerSec': '0.0', 'stddev': '9.0', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 572.85, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/gp/navigation/redirector.html/ref=sign-in-redirect?ie=UTF8&amp;associationHandle=inflex&amp;currentPageURL=https%3A%2F%2Fwww.amazon.in%2F%3Fref_%3Dnav_custrec_signin&amp;pageType=Gateway&amp;switchAccount=&amp;yshURL=https%3A%2F%2Fwww.amazon.in%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26ref_%3Dnav_custrec_signin', 'averageBytes': 14737, 'median': 707, 'bytesPerSec': 51.45151435803439, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 15, 280000), 'timeTable': [704, 710], 'percentil90': 710, 'endTime': datetime.datetime(2018, 8, 28, 20, 40, 48, 130000), 'kBytesPerSec': '0.1', 'stddev': '3.0', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 573.834, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/ap/signin', 'averageBytes': 176400, 'median': 1788, 'bytesPerSec': 614.8119491002625, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 38, 686000), 'timeTable': [1615, 1962], 'percentil90': 1962, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 11, 520000), 'kBytesPerSec': '0.6', 'stddev': '173.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 574.187, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/?ref_=nav_custrec_signin&amp;', 'averageBytes': 255497, 'median': 1910, 'bytesPerSec': 889.9435201423926, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 40, 936000), 'timeTable': [1881, 1940], 'percentil90': 1940, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 14, 123000), 'kBytesPerSec': '0.9', 'stddev': '29.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 573.256, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390613966&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;h=032edf46f7b286a02120eff9ea5479788b2fbd179fe1db48b1820a63e01ed1af', 'averageBytes': 1008, 'median': 336, 'bytesPerSec': 3.5167534225546704, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 46, 109000), 'timeTable': [297, 376], 'percentil90': 376, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 19, 365000), 'kBytesPerSec': '0.0', 'stddev': '39.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 573.335, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsIwEIDhJzpIk_RyGVtBl46i8yW5A7FSoZUivrx1Eqq4-gL_8P2PlXCR8TwN1y_QO55k5vvau6kObdPFfVcfN-32l77c_m2TXR1QLQESRvAsARKpQiBTYkFmzHntp8KVw2LAu-TB2zoBWRVQTjaZKLyk3sZzD5chnXoZP7RLUUMiS0iZl5C1QB4FYjC5eHYScngdeQJDyoDl&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=c7f086146e38f15bd9eb134573423df16b12ed0d4fab9569fbe0a2b3c53be74e', 'averageBytes': 1008, 'median': 305, 'bytesPerSec': 3.516268848055674, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 49, 379000), 'timeTable': [324, 286], 'percentil90': 324, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 22, 714000), 'kBytesPerSec': '0.0', 'stddev': '19.0', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 573.296, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?primeContent=prime&amp;metricKey=primeMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWidthPrime=0&amp;isPrime=0&amp;dynamicRequest=1&amp;weblabs=&amp;isFreshRegionAndCustomer=&amp;primeMenuWidth=310&amp;_=1535390500265', 'averageBytes': 3159, 'median': 351, 'bytesPerSec': 11.022229354469593, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 49, 708000), 'timeTable': [356, 346], 'percentil90': 356, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 23, 4000), 'kBytesPerSec': '0.0', 'stddev': '5.0', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 573.287, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?wishlistItems=wishlist&amp;alexaItems=alexa&amp;metricKey=alexaMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWidthPrime=0&amp;isPrime=0&amp;dynamicRequest=1&amp;weblabs=&amp;isFreshRegionAndCustomer=&amp;primeMenuWidth=310&amp;_=1535390501023', 'averageBytes': 911, 'median': 232, 'bytesPerSec': 3.178163816727049, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 50, 68000), 'timeTable': [218, 247], 'percentil90': 247, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 23, 355000), 'kBytesPerSec': '0.0', 'stddev': '14.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 573.315, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/product/sessionCacheUpdateHandler.html', 'averageBytes': 1183, 'median': 232, 'bytesPerSec': 4.12687615010945, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 50, 290000), 'timeTable': [230, 235], 'percentil90': 235, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 23, 605000), 'kBytesPerSec': '0.0', 'stddev': '2.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 573.324, 'samplesErrorInclAssert': 0, 'sampleName': 'https://images-eu.ssl-images-amazon.com/images/G/31/img18/Wireless/CEEX/Samsung_Star/Samsung_Star_AE/IN_WLM_Samsung_Star_PC_Bunk_1500x300_Updated._CB485619899_.jpg', 'averageBytes': 448, 'median': 124, 'bytesPerSec': 1.5628161388673771, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 50, 522000), 'timeTable': [172, 76], 'percentil90': 172, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 23, 846000), 'kBytesPerSec': '0.0', 'stddev': '48.0', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 573.228, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE9CsJAEEDhEw3MZPa3TARtUorWs7uzjQGDiYh4eWMlRLH1AK_53mMlXHQ6zefxC_ROZr3Jfe3d0qFr-7jv7XHTbX_p6_XfNoW9zSVaKI4DGGQGQSMQqmQhzRGprv00p4KVKpRmCU2wBClVgmoSmRxyY6N_G08DyDjKRYcPbSde1C8OnDiCcYyQiiowMbrMkdHz68gTM3iAIQ&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=6f777a457753064d1a58a8c114a7e9e20508dfea3196ede1af6f184deeb2d4ae', 'averageBytes': 1008, 'median': 290, 'bytesPerSec': 3.5169252025372106, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 53, 266000), 'timeTable': [300, 281], 'percentil90': 300, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 26, 494000), 'kBytesPerSec': '0.0', 'stddev': '9.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 573.211, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE7CwIxEATgX7SQx-ZV3gnaXClab5INByoRPBHxzxsrIYqt3VQz8M2jE858OSz1_AV6Qwvf6N57D3I3DlPYTma_Gte_9Pn6bxu2zMF4DwKVBxSRwZNrSQWhkTJajL2fMWxSKggkIwHaHCFmEYAwyaJVJMf8Nq7zEeZ64g_ropMupjVYZV0bFAmCL6F1ZVKiaK-zfP3xBP6Ef7U&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=4583cf48c111fc1c491c6fc94ba617bbaf660451ece1f412ab23c04aaebc0745', 'averageBytes': 1008, 'median': 326, 'bytesPerSec': 3.5170295057143006, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 31, 56, 837000), 'timeTable': [336, 316], 'percentil90': 336, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 30, 48000), 'kBytesPerSec': '0.0', 'stddev': '10.0', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 573.193, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdFBCsIwEIXhEw00yUyTLFtBN12KriczGQQXFloR8fLalVDFrSd4_N97rIS1Tuf5Mn6B3vFcb3xfe3fu0HdD3g903PTbX_r1-m8bCi65HDyY-ASooQAHDJAEDTEnrKZrPymR0MgBeYyAngyYWoUgjao6a0rht_GrZILTKB_WHjU2hgySHS_TBJlThEqkLfoYvcTljye2hX6h&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=cffa2ad96133c67dc78e573713d334ebf97ed00c7967631ed32561ed60fcca2f', 'averageBytes': 1008, 'median': 998, 'bytesPerSec': 3.517139951115942, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 0, 444000), 'timeTable': [1661, 335], 'percentil90': 1661, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 33, 637000), 'kBytesPerSec': '0.0', 'stddev': '663.0', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 571.868, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsJADIDhJwpcrklzN7aCLh1F51wuXRwsqIj48raTUMXVF_iH73-uhKtfTtfz9AV6p1e_62Pt3eGh74a8H_i46be_9P32b5tStWbKCRoOAhQ8gUYjEBYaTQmJ27VfTYmagBVwVAdqqYBidYgcpbUUsUR5G5tPBgvAB3Ya3Tgwg2YzoDwX1eZYEGxCQVGNuAx5ASZQfsc&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=12fa2ade6b71a22f8c5973d85d8d229a295c47ebd289179d30fb14ed7a164d86', 'averageBytes': 1008, 'median': 593, 'bytesPerSec': 3.5252890527184593, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 5, 375000), 'timeTable': [278, 909], 'percentil90': 909, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 37, 243000), 'kBytesPerSec': '0.0', 'stddev': '315.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 572.504, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdExC8JADAXgXxQwTWovYyvo0lF0zt0lS5ET2iLin7dOQhVXx_eGN3zvsRLONg5TuX6BPuhkN72vvVs8dW0vx74-77r9L32b_23ToAUidWCXCNyEDEIpgrOQbhgTCa_9fOncaQvotQEnE4iMGTBXapLVLdHb-FLAYinD-IFNUkeTgGBiCTgrLju2xOQZ3YPGil-HPAG7K4E0&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=863232111c5bc787af109ab7c43f80af53544f9a626e1ee4fc0e08f1b959994b', 'averageBytes': 1008, 'median': 4022, 'bytesPerSec': 3.5213727764347498, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 8, 919000), 'timeTable': [7756, 288], 'percentil90': 7756, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 41, 423000), 'kBytesPerSec': '0.0', 'stddev': '3734.0', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 590.046, 'samplesErrorInclAssert': 100, 'sampleName': 'Test', 'averageBytes': 1369495, 'median': 20079, 'bytesPerSec': 4641.994014026025, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 30, 59, 517000), 'timeTable': [25099, 15060], 'percentil90': 25099, 'endTime': datetime.datetime(2018, 8, 28, 20, 40, 34, 563000), 'kBytesPerSec': '4.6', 'stddev': '5019.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 641.813, 'samplesErrorInclAssert': 53, 'sampleName': 'TOTAL', 'averageBytes': 144157, 'median': 323, 'bytesPerSec': 8535.165227254667, 'samplesErrorNoAssert': 53, 'throughput': '0.06', 'startTime': datetime.datetime(2018, 8, 28, 20, 30, 59, 610000), 'timeTable': [8099, 302, 322, 248, 704, 1615, 1881, 297, 324, 356, 218, 230, 172, 300, 336, 1661, 278, 7756, 25099, 5917, 303, 303, 230, 710, 1962, 1940, 376, 286, 346, 247, 235, 76, 281, 316, 335, 909, 288, 15060], 'percentil90': 8099, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 41, 423000), 'kBytesPerSec': '8.5', 'stddev': '4779.8', 'samplesSuccessRateInclAssert': 47, 'samplesSuccessRateNoAssert': 47}]</msg>
+<status status="PASS" endtime="20180828 20:41:48.263" starttime="20180828 20:41:48.263"></status>
+</kw>
+<kw type="for" name="${ELEMENT} IN [ @{result} ]">
+<kw type="foritem" name="${ELEMENT} = {'samplesSuccessRateNoAssert': 47, 'minTime': 76, 'assertions': 0, 'samples': 38, 'averageTime': 2113, 'maxTime': 25099, 'assertionPassRate': 0, 'samplesSuccessRateInclAssert': 47}">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.283" level="INFO">Dictionary size is 8 and it contains following items:
+assertionPassRate: 0
+assertions: 0
+averageTime: 2113
+maxTime: 25099
+minTime: 76
+samples: 38
+samplesSuccessRateInclAssert: 47
+samplesSuccessRateNoAssert: 47</msg>
+<status status="PASS" endtime="20180828 20:41:48.284" starttime="20180828 20:41:48.281"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.288" level="INFO">${check} = 47</msg>
+<status status="PASS" endtime="20180828 20:41:48.288" starttime="20180828 20:41:48.285"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.291" starttime="20180828 20:41:48.290"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.292" starttime="20180828 20:41:48.280"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 580.049, 'samplesErrorInclAssert': 0, 'sampleName': 'http://amazon.in/', 'averageBytes': 906139, 'median': 7008, 'bytesPerSec': 3124.355011386969, 'samplesErrorNoAssert': 0, 'throughput'...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.295" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 906139
+bytesPerSec: 3124.35501139
+endTime: 2018-08-28 20:40:34.659000
+kBytesPerSec: 3.1
+median: 7008
+percentil90: 8099
+sampleName: http://amazon.in/
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:30:59.610000
+stddev: 1091.0
+throughput: 0.00
+timeTable: [8099, 5917]
+totalTime: 580.049</msg>
+<status status="PASS" endtime="20180828 20:41:48.295" starttime="20180828 20:41:48.294"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.298" level="INFO">${check} = 100</msg>
+<status status="PASS" endtime="20180828 20:41:48.298" starttime="20180828 20:41:48.296"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.300" starttime="20180828 20:41:48.299"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.300" starttime="20180828 20:41:48.293"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 572.877, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390582520&amp;rId=3ERX6ZAB16V7GPQBF0MP&amp;mkId=A21TJRUUN4KGV&amp;h=775050bd...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.302" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 634
+bytesPerSec: 2.21338961068
+endTime: 2018-08-28 20:40:45.109000
+kBytesPerSec: 0.0
+median: 302
+percentil90: 303
+sampleName: https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390582520&amp;rId=3ERX6ZAB16V7GPQBF0MP&amp;mkId=A21TJRUUN4KGV&amp;h=775050bde76a65e0363a9972a29097b899541b8b4aa8c7c64529719e61c1035c
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:31:12.232000
+stddev: 0.7
+throughput: 0.00
+timeTable: [302, 303]
+totalTime: 572.877</msg>
+<status status="PASS" endtime="20180828 20:41:48.303" starttime="20180828 20:41:48.301"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.305" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.305" starttime="20180828 20:41:48.304"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.307" starttime="20180828 20:41:48.306"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.307" starttime="20180828 20:41:48.301"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 572.881, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/aq-feedback/lazyLoad/handler/af-link-handler.html?pl=%7B%22adPlacementMetaData%22%3A%7B%22pageUrl%22%3A%22aH...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.309" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 2242
+bytesPerSec: 7.82710545471
+endTime: 2018-08-28 20:40:45.420000
+kBytesPerSec: 0.0
+median: 312
+percentil90: 322
+sampleName: https://www.amazon.in/gp/aq-feedback/lazyLoad/handler/af-link-handler.html?pl=%7B%22adPlacementMetaData%22%3A%7B%22pageUrl%22%3A%22aHR0cHM6Ly93d3cuYW1hem9uLmluL3Nob3BwaW5nUG9ydGFsL2Rlc2t0b3AvcmVmPW5hdl9jdXN0cmVjX3NpZ25pbj9fZW5jb2Rpbmc9VVRGOCZvcGZfcmVkaXI9MQ%3D%3D%22%2C%22adElementId%22%3A%22ape_Gateway_right-2_desktop_placement%22%2C%22pageType%22%3A%22Gateway%22%2C%22slotName%22%3A%22right-2%22%7D%2C%22adCreativeMetaData%22%3A%7B%22adProgramId%22%3A%221004%22%2C%22adImpressionId%22%3A%22https%3A%2F%2Faax-eu.amazon-adsystem.com%2Fe%2Fxsp%2Fimp%3Fb%3DQnw3kiy1tWO841DD1qb8Ta4AAAFlfGetFQMAAAH_AfiNSxE%22%2C%22adCreativeId%22%3A%226996784002%22%2C%22adId%22%3A%222831561602%22%2C%22adNetwork%22%3A%22cs%22%7D%7D
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:31:12.539000
+stddev: 9.5
+throughput: 0.00
+timeTable: [322, 303]
+totalTime: 572.881</msg>
+<status status="PASS" endtime="20180828 20:41:48.309" starttime="20180828 20:41:48.308"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.311" level="INFO">${check} = 100</msg>
+<status status="PASS" endtime="20180828 20:41:48.311" starttime="20180828 20:41:48.310"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.312" starttime="20180828 20:41:48.312"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.313" starttime="20180828 20:41:48.308"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 572.865, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/overlay/display.html', 'averageBytes': 1088, 'median': 239, 'bytesPerSec': 3.798451642184459, 'samplesErrorN...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.315" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1088
+bytesPerSec: 3.79845164218
+endTime: 2018-08-28 20:40:45.728000
+kBytesPerSec: 0.0
+median: 239
+percentil90: 248
+sampleName: https://www.amazon.in/gp/overlay/display.html
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:31:12.863000
+stddev: 9.0
+throughput: 0.00
+timeTable: [248, 230]
+totalTime: 572.865</msg>
+<status status="PASS" endtime="20180828 20:41:48.315" starttime="20180828 20:41:48.314"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.317" level="INFO">${check} = 100</msg>
+<status status="PASS" endtime="20180828 20:41:48.318" starttime="20180828 20:41:48.316"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.320" starttime="20180828 20:41:48.318"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.320" starttime="20180828 20:41:48.314"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 572.85, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/gp/navigation/redirector.html/ref=sign-in-redirect?ie=UTF8&amp;associationHandle=inflex&amp;currentPageURL=https%3A%2F...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.323" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 14737
+bytesPerSec: 51.451514358
+endTime: 2018-08-28 20:40:48.130000
+kBytesPerSec: 0.1
+median: 707
+percentil90: 710
+sampleName: https://www.amazon.in/gp/navigation/redirector.html/ref=sign-in-redirect?ie=UTF8&amp;associationHandle=inflex&amp;currentPageURL=https%3A%2F%2Fwww.amazon.in%2F%3Fref_%3Dnav_custrec_signin&amp;pageType=Gateway&amp;switchAccount=&amp;yshURL=https%3A%2F%2Fwww.amazon.in%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26ref_%3Dnav_custrec_signin
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:31:15.280000
+stddev: 3.0
+throughput: 0.00
+timeTable: [704, 710]
+totalTime: 572.85</msg>
+<status status="PASS" endtime="20180828 20:41:48.323" starttime="20180828 20:41:48.322"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.325" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.325" starttime="20180828 20:41:48.324"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.327" starttime="20180828 20:41:48.326"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.327" starttime="20180828 20:41:48.321"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.834, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/ap/signin', 'averageBytes': 176400, 'median': 1788, 'bytesPerSec': 614.8119491002625, 'samplesErrorNoAssert': 0...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.330" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 176400
+bytesPerSec: 614.8119491
+endTime: 2018-08-28 20:41:11.520000
+kBytesPerSec: 0.6
+median: 1788
+percentil90: 1962
+sampleName: https://www.amazon.in/ap/signin
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:31:38.686000
+stddev: 173.5
+throughput: 0.00
+timeTable: [1615, 1962]
+totalTime: 573.834</msg>
+<status status="PASS" endtime="20180828 20:41:48.330" starttime="20180828 20:41:48.328"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.330" level="INFO">${check} = 100</msg>
+<status status="PASS" endtime="20180828 20:41:48.330" starttime="20180828 20:41:48.330"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.330" starttime="20180828 20:41:48.330"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.330" starttime="20180828 20:41:48.328"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 574.187, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/?ref_=nav_custrec_signin&amp;', 'averageBytes': 255497, 'median': 1910, 'bytesPerSec': 889.9435201423926, 'samplesE...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.330" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 255497
+bytesPerSec: 889.943520142
+endTime: 2018-08-28 20:41:14.123000
+kBytesPerSec: 0.9
+median: 1910
+percentil90: 1940
+sampleName: https://www.amazon.in/?ref_=nav_custrec_signin&amp;
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:31:40.936000
+stddev: 29.5
+throughput: 0.00
+timeTable: [1881, 1940]
+totalTime: 574.187</msg>
+<status status="PASS" endtime="20180828 20:41:48.330" starttime="20180828 20:41:48.330"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.330" level="INFO">${check} = 100</msg>
+<status status="PASS" endtime="20180828 20:41:48.330" starttime="20180828 20:41:48.330"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.330" starttime="20180828 20:41:48.330"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.345" starttime="20180828 20:41:48.330"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.256, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390613966&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;h=032edf46...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.345" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1008
+bytesPerSec: 3.51675342255
+endTime: 2018-08-28 20:41:19.365000
+kBytesPerSec: 0.0
+median: 336
+percentil90: 376
+sampleName: https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390613966&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;h=032edf46f7b286a02120eff9ea5479788b2fbd179fe1db48b1820a63e01ed1af
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:31:46.109000
+stddev: 39.5
+throughput: 0.00
+timeTable: [297, 376]
+totalTime: 573.256</msg>
+<status status="PASS" endtime="20180828 20:41:48.345" starttime="20180828 20:41:48.345"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.345" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.345" starttime="20180828 20:41:48.345"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.345" starttime="20180828 20:41:48.345"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.345" starttime="20180828 20:41:48.345"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.335, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsIwEIDhJzpIk_RyGVtBl46i8yW5A7FSoZUivrx1Eqq4-gL_8P2PlXCR8TwN1y_QO5...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.345" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1008
+bytesPerSec: 3.51626884806
+endTime: 2018-08-28 20:41:22.714000
+kBytesPerSec: 0.0
+median: 305
+percentil90: 324
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsIwEIDhJzpIk_RyGVtBl46i8yW5A7FSoZUivrx1Eqq4-gL_8P2PlXCR8TwN1y_QO55k5vvau6kObdPFfVcfN-32l77c_m2TXR1QLQESRvAsARKpQiBTYkFmzHntp8KVw2LAu-TB2zoBWRVQTjaZKLyk3sZzD5chnXoZP7RLUUMiS0iZl5C1QB4FYjC5eHYScngdeQJDyoDl&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=c7f086146e38f15bd9eb134573423df16b12ed0d4fab9569fbe0a2b3c53be74e
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:31:49.379000
+stddev: 19.0
+throughput: 0.00
+timeTable: [324, 286]
+totalTime: 573.335</msg>
+<status status="PASS" endtime="20180828 20:41:48.345" starttime="20180828 20:41:48.345"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.361" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.361" starttime="20180828 20:41:48.345"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.361" starttime="20180828 20:41:48.361"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.361" starttime="20180828 20:41:48.345"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.296, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?primeContent=prime&amp;metricKey=primeMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWi...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.361" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 3159
+bytesPerSec: 11.0222293545
+endTime: 2018-08-28 20:41:23.004000
+kBytesPerSec: 0.0
+median: 351
+percentil90: 356
+sampleName: https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?primeContent=prime&amp;metricKey=primeMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWidthPrime=0&amp;isPrime=0&amp;dynamicRequest=1&amp;weblabs=&amp;isFreshRegionAndCustomer=&amp;primeMenuWidth=310&amp;_=1535390500265
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:31:49.708000
+stddev: 5.0
+throughput: 0.00
+timeTable: [356, 346]
+totalTime: 573.296</msg>
+<status status="PASS" endtime="20180828 20:41:48.361" starttime="20180828 20:41:48.361"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.361" level="INFO">${check} = 100</msg>
+<status status="PASS" endtime="20180828 20:41:48.361" starttime="20180828 20:41:48.361"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.361" starttime="20180828 20:41:48.361"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.361" starttime="20180828 20:41:48.361"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.287, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?wishlistItems=wishlist&amp;alexaItems=alexa&amp;metricKey=alexaMetric&amp;rid=AFK58TVF...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.361" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 911
+bytesPerSec: 3.17816381673
+endTime: 2018-08-28 20:41:23.355000
+kBytesPerSec: 0.0
+median: 232
+percentil90: 247
+sampleName: https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?wishlistItems=wishlist&amp;alexaItems=alexa&amp;metricKey=alexaMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWidthPrime=0&amp;isPrime=0&amp;dynamicRequest=1&amp;weblabs=&amp;isFreshRegionAndCustomer=&amp;primeMenuWidth=310&amp;_=1535390501023
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:31:50.068000
+stddev: 14.5
+throughput: 0.00
+timeTable: [218, 247]
+totalTime: 573.287</msg>
+<status status="PASS" endtime="20180828 20:41:48.361" starttime="20180828 20:41:48.361"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.361" level="INFO">${check} = 100</msg>
+<status status="PASS" endtime="20180828 20:41:48.361" starttime="20180828 20:41:48.361"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.376"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.361"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.315, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/product/sessionCacheUpdateHandler.html', 'averageBytes': 1183, 'median': 232, 'bytesPerSec': 4.1268761501094...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.376" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1183
+bytesPerSec: 4.12687615011
+endTime: 2018-08-28 20:41:23.605000
+kBytesPerSec: 0.0
+median: 232
+percentil90: 235
+sampleName: https://www.amazon.in/gp/product/sessionCacheUpdateHandler.html
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:31:50.290000
+stddev: 2.5
+throughput: 0.00
+timeTable: [230, 235]
+totalTime: 573.315</msg>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.376"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.376" level="INFO">${check} = 100</msg>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.376"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.376"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.376"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.324, 'samplesErrorInclAssert': 0, 'sampleName': 'https://images-eu.ssl-images-amazon.com/images/G/31/img18/Wireless/CEEX/Samsung_Star/Samsung_Star_AE/IN_WLM_Samsung_Star_PC_Bunk_1500...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.376" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 448
+bytesPerSec: 1.56281613887
+endTime: 2018-08-28 20:41:23.846000
+kBytesPerSec: 0.0
+median: 124
+percentil90: 172
+sampleName: https://images-eu.ssl-images-amazon.com/images/G/31/img18/Wireless/CEEX/Samsung_Star/Samsung_Star_AE/IN_WLM_Samsung_Star_PC_Bunk_1500x300_Updated._CB485619899_.jpg
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:31:50.522000
+stddev: 48.0
+throughput: 0.00
+timeTable: [172, 76]
+totalTime: 573.324</msg>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.376"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.376" level="INFO">${check} = 100</msg>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.376"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.376"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.376" starttime="20180828 20:41:48.376"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.228, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE9CsJAEEDhEw3MZPa3TARtUorWs7uzjQGDiYh4eWMlRLH1AK_53mMlXHQ6zefxC_ROZr...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.392" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1008
+bytesPerSec: 3.51692520254
+endTime: 2018-08-28 20:41:26.494000
+kBytesPerSec: 0.0
+median: 290
+percentil90: 300
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE9CsJAEEDhEw3MZPa3TARtUorWs7uzjQGDiYh4eWMlRLH1AK_53mMlXHQ6zefxC_ROZr3Jfe3d0qFr-7jv7XHTbX_p6_XfNoW9zSVaKI4DGGQGQSMQqmQhzRGprv00p4KVKpRmCU2wBClVgmoSmRxyY6N_G08DyDjKRYcPbSde1C8OnDiCcYyQiiowMbrMkdHz68gTM3iAIQ&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=6f777a457753064d1a58a8c114a7e9e20508dfea3196ede1af6f184deeb2d4ae
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:31:53.266000
+stddev: 9.5
+throughput: 0.00
+timeTable: [300, 281]
+totalTime: 573.228</msg>
+<status status="PASS" endtime="20180828 20:41:48.392" starttime="20180828 20:41:48.392"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.392" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.392" starttime="20180828 20:41:48.392"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.392" starttime="20180828 20:41:48.392"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.392" starttime="20180828 20:41:48.392"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.211, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE7CwIxEATgX7SQx-ZV3gnaXClab5INByoRPBHxzxsrIYqt3VQz8M2jE858OSz1_AV6Qw...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.392" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1008
+bytesPerSec: 3.51702950571
+endTime: 2018-08-28 20:41:30.048000
+kBytesPerSec: 0.0
+median: 326
+percentil90: 336
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE7CwIxEATgX7SQx-ZV3gnaXClab5INByoRPBHxzxsrIYqt3VQz8M2jE858OSz1_AV6Qwvf6N57D3I3DlPYTma_Gte_9Pn6bxu2zMF4DwKVBxSRwZNrSQWhkTJajL2fMWxSKggkIwHaHCFmEYAwyaJVJMf8Nq7zEeZ64g_ropMupjVYZV0bFAmCL6F1ZVKiaK-zfP3xBP6Ef7U&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=4583cf48c111fc1c491c6fc94ba617bbaf660451ece1f412ab23c04aaebc0745
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:31:56.837000
+stddev: 10.0
+throughput: 0.00
+timeTable: [336, 316]
+totalTime: 573.211</msg>
+<status status="PASS" endtime="20180828 20:41:48.392" starttime="20180828 20:41:48.392"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.392" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.392" starttime="20180828 20:41:48.392"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.392" starttime="20180828 20:41:48.392"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.392" starttime="20180828 20:41:48.392"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 573.193, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdFBCsIwEIXhEw00yUyTLFtBN12KriczGQQXFloR8fLalVDFrSd4_N97rIS1Tuf5Mn6B3v...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.408" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1008
+bytesPerSec: 3.51713995112
+endTime: 2018-08-28 20:41:33.637000
+kBytesPerSec: 0.0
+median: 998
+percentil90: 1661
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdFBCsIwEIXhEw00yUyTLFtBN12KriczGQQXFloR8fLalVDFrSd4_N97rIS1Tuf5Mn6B3vFcb3xfe3fu0HdD3g903PTbX_r1-m8bCi65HDyY-ASooQAHDJAEDTEnrKZrPymR0MgBeYyAngyYWoUgjao6a0rht_GrZILTKB_WHjU2hgySHS_TBJlThEqkLfoYvcTljye2hX6h&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=cffa2ad96133c67dc78e573713d334ebf97ed00c7967631ed32561ed60fcca2f
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:32:00.444000
+stddev: 663.0
+throughput: 0.00
+timeTable: [1661, 335]
+totalTime: 573.193</msg>
+<status status="PASS" endtime="20180828 20:41:48.408" starttime="20180828 20:41:48.392"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.408" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.408" starttime="20180828 20:41:48.408"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.408" starttime="20180828 20:41:48.408"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.408" starttime="20180828 20:41:48.392"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 571.868, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsJADIDhJwpcrklzN7aCLh1F51wuXRwsqIj48raTUMXVF_iH73-uhKtfTtfz9AV6p1...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.423" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1008
+bytesPerSec: 3.52528905272
+endTime: 2018-08-28 20:41:37.243000
+kBytesPerSec: 0.0
+median: 593
+percentil90: 909
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsJADIDhJwpcrklzN7aCLh1F51wuXRwsqIj48raTUMXVF_iH73-uhKtfTtfz9AV6p1e_62Pt3eGh74a8H_i46be_9P32b5tStWbKCRoOAhQ8gUYjEBYaTQmJ27VfTYmagBVwVAdqqYBidYgcpbUUsUR5G5tPBgvAB3Ya3Tgwg2YzoDwX1eZYEGxCQVGNuAx5ASZQfsc&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=12fa2ade6b71a22f8c5973d85d8d229a295c47ebd289179d30fb14ed7a164d86
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:32:05.375000
+stddev: 315.5
+throughput: 0.00
+timeTable: [278, 909]
+totalTime: 571.868</msg>
+<status status="PASS" endtime="20180828 20:41:48.423" starttime="20180828 20:41:48.408"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.423" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.423" starttime="20180828 20:41:48.423"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.423" starttime="20180828 20:41:48.423"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.423" starttime="20180828 20:41:48.408"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 572.504, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdExC8JADAXgXxQwTWovYyvo0lF0zt0lS5ET2iLin7dOQhVXx_eGN3zvsRLONg5TuX6BPu...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.423" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1008
+bytesPerSec: 3.52137277643
+endTime: 2018-08-28 20:41:41.423000
+kBytesPerSec: 0.0
+median: 4022
+percentil90: 7756
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdExC8JADAXgXxQwTWovYyvo0lF0zt0lS5ET2iLin7dOQhVXx_eGN3zvsRLONg5TuX6BPuhkN72vvVs8dW0vx74-77r9L32b_23ToAUidWCXCNyEDEIpgrOQbhgTCa_9fOncaQvotQEnE4iMGTBXapLVLdHb-FLAYinD-IFNUkeTgGBiCTgrLju2xOQZ3YPGil-HPAG7K4E0&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=863232111c5bc787af109ab7c43f80af53544f9a626e1ee4fc0e08f1b959994b
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:32:08.919000
+stddev: 3734.0
+throughput: 0.00
+timeTable: [7756, 288]
+totalTime: 572.504</msg>
+<status status="PASS" endtime="20180828 20:41:48.423" starttime="20180828 20:41:48.423"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.423" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.423" starttime="20180828 20:41:48.423"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.423" starttime="20180828 20:41:48.423"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.423" starttime="20180828 20:41:48.423"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 590.046, 'samplesErrorInclAssert': 100, 'sampleName': 'Test', 'averageBytes': 1369495, 'median': 20079, 'bytesPerSec': 4641.994014026025, 'samplesErrorNoAssert': 100, 'throughput': '0.00...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.439" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1369495
+bytesPerSec: 4641.99401403
+endTime: 2018-08-28 20:40:34.563000
+kBytesPerSec: 4.6
+median: 20079
+percentil90: 25099
+sampleName: Test
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:30:59.517000
+stddev: 5019.5
+throughput: 0.00
+timeTable: [25099, 15060]
+totalTime: 590.046</msg>
+<status status="PASS" endtime="20180828 20:41:48.439" starttime="20180828 20:41:48.423"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.439" level="INFO">${check} = 0</msg>
+<status status="PASS" endtime="20180828 20:41:48.439" starttime="20180828 20:41:48.439"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.439" starttime="20180828 20:41:48.439"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.439" starttime="20180828 20:41:48.423"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 641.813, 'samplesErrorInclAssert': 53, 'sampleName': 'TOTAL', 'averageBytes': 144157, 'median': 323, 'bytesPerSec': 8535.165227254667, 'samplesErrorNoAssert': 53, 'throughput': '0.06', '...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.439" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 144157
+bytesPerSec: 8535.16522725
+endTime: 2018-08-28 20:41:41.423000
+kBytesPerSec: 8.5
+median: 323
+percentil90: 8099
+sampleName: TOTAL
+samplesErrorInclAssert: 53
+samplesErrorNoAssert: 53
+samplesSuccessRateInclAssert: 47
+samplesSuccessRateNoAssert: 47
+startTime: 2018-08-28 20:30:59.610000
+stddev: 4779.8
+throughput: 0.06
+timeTable: [8099, 302, 322, 248, 704, 1615, 1881, 297, 324, 356, 218, 230, 172, 300, 336, 1661, 278, 7756, 25099, 5917, 303, 303, 230, 710, 1962, 1940, 376, 286, 346, 247, 235, 76, 281, 316, 335, 909, 288, 15060]
+totalTime: 641.813</msg>
+<status status="PASS" endtime="20180828 20:41:48.439" starttime="20180828 20:41:48.439"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>samplesSuccessRateInclAssert</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20180828 20:41:48.455" level="INFO">${check} = 47</msg>
+<status status="PASS" endtime="20180828 20:41:48.455" starttime="20180828 20:41:48.439"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${check}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 20:41:48.486" starttime="20180828 20:41:48.455"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.486" starttime="20180828 20:41:48.439"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:41:48.486" starttime="20180828 20:41:48.279"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${check}</arg>
+<arg>47</arg>
+</arguments>
+<msg timestamp="20180828 20:41:48.486" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20180828 20:41:48.501" starttime="20180828 20:41:48.486"></status>
+</kw>
+<tags>
+<tag>Performance</tag>
+</tags>
+<status status="PASS" endtime="20180828 20:41:48.501" critical="yes" starttime="20180828 20:41:42.309"></status>
+</test>
+<test id="s1-s1-s1-t3" name="TC3_runJMeterAndAnalyseAndConvertLog">
+<kw name="Run Jmeter Analyse Jtl Convert" library="JMeterLib">
+<doc>Runs JMeter and parses log file. Converts results into HTML and SQLite format.</doc>
+<arguments>
+<arg>${jMeterStartup}</arg>
+<arg>${jmxFileLocation}</arg>
+<arg>${outputresults}TC3.jtl</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20180828 20:43:13.624" level="INFO">Starting JMeter with following parameters:
+ - JMeter path: C:/Jmeter/bin/jmeter.bat
+ - Test plan path: D:/00_Workspace/04_RobotFrameWork/01_Python/CME-QA_AutomationFramework/01_Testathon_TestSuites/02_Inputs/AmazonLogin.jmx
+ - Log file path: D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC3.jtl
+ - Other parameters:  .
+subprocess.call input list: [u'C:/Jmeter/bin/jmeter.bat', '-n', '-t', u'D:/00_Workspace/04_RobotFrameWork/01_Python/CME-QA_AutomationFramework/01_Testathon_TestSuites/02_Inputs/AmazonLogin.jmx', '-l', u'D:\\00_Workspace\\04_RobotFrameWork\\01_Python\\CME-QA_AutomationFrameworkTC3.jtl']
+Value returned by JMeter: 0
+Opening log file D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC3.jtl
+Log file format: csv
+Extracting samples and assertions from D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC3.jtl
+Calculating statistical values
+Creating html D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC3.jtl20180828151307.html
+Creating SQLite DB file D:\00_Workspace\04_RobotFrameWork\01_Python\CME-QA_AutomationFrameworkTC3.jtl20180828151307.sql</msg>
+<msg timestamp="20180828 20:43:13.624" level="INFO">${result} = [{'samplesSuccessRateNoAssert': 47, 'minTime': 128, 'assertions': 0, 'samples': 38, 'averageTime': 1740, 'maxTime': 17949, 'assertionPassRate': 0, 'samplesSuccessRateInclAssert': 47}, {'totalTime': 57...</msg>
+<status status="PASS" endtime="20180828 20:43:13.624" starttime="20180828 20:41:48.501"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.624" level="INFO">[{'samplesSuccessRateNoAssert': 47, 'minTime': 128, 'assertions': 0, 'samples': 38, 'averageTime': 1740, 'maxTime': 17949, 'assertionPassRate': 0, 'samplesSuccessRateInclAssert': 47}, {'totalTime': 574.191, 'samplesErrorInclAssert': 0, 'sampleName': 'http://amazon.in/', 'averageBytes': 918782, 'median': 6690, 'bytesPerSec': 3200.266113540616, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 29, 611000), 'timeTable': [6203, 7178], 'percentil90': 7178, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 56, 802000), 'kBytesPerSec': '3.2', 'stddev': '487.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 568.184, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390582520&amp;rId=3ERX6ZAB16V7GPQBF0MP&amp;mkId=A21TJRUUN4KGV&amp;h=775050bde76a65e0363a9972a29097b899541b8b4aa8c7c64529719e61c1035c', 'averageBytes': 813, 'median': 351, 'bytesPerSec': 2.8617490108837984, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 40, 341000), 'timeTable': [366, 337], 'percentil90': 366, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 8, 525000), 'kBytesPerSec': '0.0', 'stddev': '14.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 568.155, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/aq-feedback/lazyLoad/handler/af-link-handler.html?pl=%7B%22adPlacementMetaData%22%3A%7B%22pageUrl%22%3A%22aHR0cHM6Ly93d3cuYW1hem9uLmluL3Nob3BwaW5nUG9ydGFsL2Rlc2t0b3AvcmVmPW5hdl9jdXN0cmVjX3NpZ25pbj9fZW5jb2Rpbmc9VVRGOCZvcGZfcmVkaXI9MQ%3D%3D%22%2C%22adElementId%22%3A%22ape_Gateway_right-2_desktop_placement%22%2C%22pageType%22%3A%22Gateway%22%2C%22slotName%22%3A%22right-2%22%7D%2C%22adCreativeMetaData%22%3A%7B%22adProgramId%22%3A%221004%22%2C%22adImpressionId%22%3A%22https%3A%2F%2Faax-eu.amazon-adsystem.com%2Fe%2Fxsp%2Fimp%3Fb%3DQnw3kiy1tWO841DD1qb8Ta4AAAFlfGetFQMAAAH_AfiNSxE%22%2C%22adCreativeId%22%3A%226996784002%22%2C%22adId%22%3A%222831561602%22%2C%22adNetwork%22%3A%22cs%22%7D%7D', 'averageBytes': 2433, 'median': 213, 'bytesPerSec': 8.564564247432479, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 40, 713000), 'timeTable': [212, 215], 'percentil90': 215, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 8, 868000), 'kBytesPerSec': '0.0', 'stddev': '1.6', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 568.158, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/overlay/display.html', 'averageBytes': 1280, 'median': 209, 'bytesPerSec': 4.505788882669961, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 40, 930000), 'timeTable': [213, 206], 'percentil90': 213, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 9, 88000), 'kBytesPerSec': '0.0', 'stddev': '3.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 568.15, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/gp/navigation/redirector.html/ref=sign-in-redirect?ie=UTF8&amp;associationHandle=inflex&amp;currentPageURL=https%3A%2F%2Fwww.amazon.in%2F%3Fref_%3Dnav_custrec_signin&amp;pageType=Gateway&amp;switchAccount=&amp;yshURL=https%3A%2F%2Fwww.amazon.in%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26ref_%3Dnav_custrec_signin', 'averageBytes': 15076, 'median': 769, 'bytesPerSec': 53.070491947549066, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 43, 313000), 'timeTable': [780, 758], 'percentil90': 780, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 11, 463000), 'kBytesPerSec': '0.1', 'stddev': '11.0', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 571.129, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/ap/signin', 'averageBytes': 176477, 'median': 2745, 'bytesPerSec': 617.9952340014253, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 6, 775000), 'timeTable': [1757, 3733], 'percentil90': 3733, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 34, 904000), 'kBytesPerSec': '0.6', 'stddev': '988.0', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 572.094, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/?ref_=nav_custrec_signin&amp;', 'averageBytes': 213588, 'median': 2188, 'bytesPerSec': 746.6884812635685, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 9, 185000), 'timeTable': [2157, 2220], 'percentil90': 2220, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 39, 279000), 'kBytesPerSec': '0.7', 'stddev': '31.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 570.155, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390613966&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;h=032edf46f7b286a02120eff9ea5479788b2fbd179fe1db48b1820a63e01ed1af', 'averageBytes': 1187, 'median': 359, 'bytesPerSec': 4.1637800247301175, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 14, 637000), 'timeTable': [354, 364], 'percentil90': 364, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 44, 792000), 'kBytesPerSec': '0.0', 'stddev': '5.0', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 570.158, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsIwEIDhJzpIk_RyGVtBl46i8yW5A7FSoZUivrx1Eqq4-gL_8P2PlXCR8TwN1y_QO55k5vvau6kObdPFfVcfN-32l77c_m2TXR1QLQESRvAsARKpQiBTYkFmzHntp8KVw2LAu-TB2zoBWRVQTjaZKLyk3sZzD5chnXoZP7RLUUMiS0iZl5C1QB4FYjC5eHYScngdeQJDyoDl&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=c7f086146e38f15bd9eb134573423df16b12ed0d4fab9569fbe0a2b3c53be74e', 'averageBytes': 1187, 'median': 340, 'bytesPerSec': 4.163758116171307, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 17, 973000), 'timeTable': [320, 361], 'percentil90': 361, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 48, 131000), 'kBytesPerSec': '0.0', 'stddev': '20.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 570.199, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?primeContent=prime&amp;metricKey=primeMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWidthPrime=0&amp;isPrime=0&amp;dynamicRequest=1&amp;weblabs=&amp;isFreshRegionAndCustomer=&amp;primeMenuWidth=310&amp;_=1535390500265', 'averageBytes': 3350, 'median': 236, 'bytesPerSec': 11.75203744657567, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 18, 296000), 'timeTable': [247, 225], 'percentil90': 247, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 48, 495000), 'kBytesPerSec': '0.0', 'stddev': '11.0', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 570.177, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?wishlistItems=wishlist&amp;alexaItems=alexa&amp;metricKey=alexaMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWidthPrime=0&amp;isPrime=0&amp;dynamicRequest=1&amp;weblabs=&amp;isFreshRegionAndCustomer=&amp;primeMenuWidth=310&amp;_=1535390501023', 'averageBytes': 1102, 'median': 206, 'bytesPerSec': 3.865466337646029, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 18, 546000), 'timeTable': [204, 209], 'percentil90': 209, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 48, 723000), 'kBytesPerSec': '0.0', 'stddev': '2.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 570.184, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/product/sessionCacheUpdateHandler.html', 'averageBytes': 1375, 'median': 210, 'bytesPerSec': 4.823004503809297, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 18, 751000), 'timeTable': [206, 215], 'percentil90': 215, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 48, 935000), 'kBytesPerSec': '0.0', 'stddev': '4.5', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 570.194, 'samplesErrorInclAssert': 0, 'sampleName': 'https://images-eu.ssl-images-amazon.com/images/G/31/img18/Wireless/CEEX/Samsung_Star/Samsung_Star_AE/IN_WLM_Samsung_Star_PC_Bunk_1500x300_Updated._CB485619899_.jpg', 'averageBytes': 448, 'median': 160, 'bytesPerSec': 1.571394998895113, 'samplesErrorNoAssert': 0, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 18, 959000), 'timeTable': [128, 192], 'percentil90': 192, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 49, 153000), 'kBytesPerSec': '0.0', 'stddev': '32.0', 'samplesSuccessRateInclAssert': 100, 'samplesSuccessRateNoAssert': 100}, {'totalTime': 570.256, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE9CsJAEEDhEw3MZPa3TARtUorWs7uzjQGDiYh4eWMlRLH1AK_53mMlXHQ6zefxC_ROZr3Jfe3d0qFr-7jv7XHTbX_p6_XfNoW9zSVaKI4DGGQGQSMQqmQhzRGprv00p4KVKpRmCU2wBClVgmoSmRxyY6N_G08DyDjKRYcPbSde1C8OnDiCcYyQiiowMbrMkdHz68gTM3iAIQ&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=6f777a457753064d1a58a8c114a7e9e20508dfea3196ede1af6f184deeb2d4ae', 'averageBytes': 1187, 'median': 344, 'bytesPerSec': 4.163042563339974, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 21, 660000), 'timeTable': [349, 340], 'percentil90': 349, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 51, 916000), 'kBytesPerSec': '0.0', 'stddev': '4.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 570.248, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE7CwIxEATgX7SQx-ZV3gnaXClab5INByoRPBHxzxsrIYqt3VQz8M2jE858OSz1_AV6Qwvf6N57D3I3DlPYTma_Gte_9Pn6bxu2zMF4DwKVBxSRwZNrSQWhkTJajL2fMWxSKggkIwHaHCFmEYAwyaJVJMf8Nq7zEeZ64g_ropMupjVYZV0bFAmCL6F1ZVKiaK-zfP3xBP6Ef7U&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=4583cf48c111fc1c491c6fc94ba617bbaf660451ece1f412ab23c04aaebc0745', 'averageBytes': 1187, 'median': 353, 'bytesPerSec': 4.163100966596989, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 25, 279000), 'timeTable': [345, 361], 'percentil90': 361, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 55, 527000), 'kBytesPerSec': '0.0', 'stddev': '8.0', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 570.267, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdFBCsIwEIXhEw00yUyTLFtBN12KriczGQQXFloR8fLalVDFrSd4_N97rIS1Tuf5Mn6B3vFcb3xfe3fu0HdD3g903PTbX_r1-m8bCi65HDyY-ASooQAHDJAEDTEnrKZrPymR0MgBeYyAngyYWoUgjao6a0rht_GrZILTKB_WHjU2hgySHS_TBJlThEqkLfoYvcTljye2hX6h&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=cffa2ad96133c67dc78e573713d334ebf97ed00c7967631ed32561ed60fcca2f', 'averageBytes': 1187, 'median': 343, 'bytesPerSec': 4.162962261537139, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 28, 893000), 'timeTable': [360, 327], 'percentil90': 360, 'endTime': datetime.datetime(2018, 8, 28, 20, 42, 59, 160000), 'kBytesPerSec': '0.0', 'stddev': '16.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 570.234, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsJADIDhJwpcrklzN7aCLh1F51wuXRwsqIj48raTUMXVF_iH73-uhKtfTtfz9AV6p1e_62Pt3eGh74a8H_i46be_9P32b5tStWbKCRoOAhQ8gUYjEBYaTQmJ27VfTYmagBVwVAdqqYBidYgcpbUUsUR5G5tPBgvAB3Ya3Tgwg2YzoDwX1eZYEGxCQVGNuAx5ASZQfsc&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=12fa2ade6b71a22f8c5973d85d8d229a295c47ebd289179d30fb14ed7a164d86', 'averageBytes': 1187, 'median': 426, 'bytesPerSec': 4.1632031762399295, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 32, 523000), 'timeTable': [512, 341], 'percentil90': 512, 'endTime': datetime.datetime(2018, 8, 28, 20, 43, 2, 757000), 'kBytesPerSec': '0.0', 'stddev': '85.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 570.055, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdExC8JADAXgXxQwTWovYyvo0lF0zt0lS5ET2iLin7dOQhVXx_eGN3zvsRLONg5TuX6BPuhkN72vvVs8dW0vx74-77r9L32b_23ToAUidWCXCNyEDEIpgrOQbhgTCa_9fOncaQvotQEnE4iMGTBXapLVLdHb-FLAYinD-IFNUkeTgGBiCTgrLju2xOQZ3YPGil-HPAG7K4E0&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=863232111c5bc787af109ab7c43f80af53544f9a626e1ee4fc0e08f1b959994b', 'averageBytes': 1187, 'median': 389, 'bytesPerSec': 4.1645104419748975, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 33, 36, 311000), 'timeTable': [411, 367], 'percentil90': 411, 'endTime': datetime.datetime(2018, 8, 28, 20, 43, 6, 366000), 'kBytesPerSec': '0.0', 'stddev': '22.0', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 584.169, 'samplesErrorInclAssert': 100, 'sampleName': 'Test', 'averageBytes': 1343034, 'median': 16536, 'bytesPerSec': 4598.10089203638, 'samplesErrorNoAssert': 100, 'throughput': '0.00', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 29, 527000), 'timeTable': [15124, 17949], 'percentil90': 17949, 'endTime': datetime.datetime(2018, 8, 28, 20, 41, 56, 696000), 'kBytesPerSec': '4.6', 'stddev': '1412.5', 'samplesSuccessRateInclAssert': 0, 'samplesSuccessRateNoAssert': 0}, {'totalTime': 636.755, 'samplesErrorInclAssert': 53, 'sampleName': 'TOTAL', 'averageBytes': 141372, 'median': 351, 'bytesPerSec': 8436.739405265762, 'samplesErrorNoAssert': 53, 'throughput': '0.06', 'startTime': datetime.datetime(2018, 8, 28, 20, 32, 29, 611000), 'timeTable': [6203, 366, 212, 213, 780, 1757, 2157, 354, 320, 247, 204, 206, 128, 349, 345, 360, 512, 411, 15124, 7178, 337, 215, 206, 758, 3733, 2220, 364, 361, 225, 209, 215, 192, 340, 361, 327, 341, 367, 17949], 'percentil90': 7178, 'endTime': datetime.datetime(2018, 8, 28, 20, 43, 6, 366000), 'kBytesPerSec': '8.4', 'stddev': '3825.9', 'samplesSuccessRateInclAssert': 47, 'samplesSuccessRateNoAssert': 47}]</msg>
+<status status="PASS" endtime="20180828 20:43:13.640" starttime="20180828 20:43:13.624"></status>
+</kw>
+<kw type="for" name="${ELEMENT} IN [ @{result} ]">
+<kw type="foritem" name="${ELEMENT} = {'samplesSuccessRateNoAssert': 47, 'minTime': 128, 'assertions': 0, 'samples': 38, 'averageTime': 1740, 'maxTime': 17949, 'assertionPassRate': 0, 'samplesSuccessRateInclAssert': 47}">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.645" level="INFO">Dictionary size is 8 and it contains following items:
+assertionPassRate: 0
+assertions: 0
+averageTime: 1740
+maxTime: 17949
+minTime: 128
+samples: 38
+samplesSuccessRateInclAssert: 47
+samplesSuccessRateNoAssert: 47</msg>
+<status status="PASS" endtime="20180828 20:43:13.645" starttime="20180828 20:43:13.643"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.646" starttime="20180828 20:43:13.642"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 574.191, 'samplesErrorInclAssert': 0, 'sampleName': 'http://amazon.in/', 'averageBytes': 918782, 'median': 6690, 'bytesPerSec': 3200.266113540616, 'samplesErrorNoAssert': 0, 'throughput'...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.649" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 918782
+bytesPerSec: 3200.26611354
+endTime: 2018-08-28 20:41:56.802000
+kBytesPerSec: 3.2
+median: 6690
+percentil90: 7178
+sampleName: http://amazon.in/
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:32:29.611000
+stddev: 487.5
+throughput: 0.00
+timeTable: [6203, 7178]
+totalTime: 574.191</msg>
+<status status="PASS" endtime="20180828 20:43:13.650" starttime="20180828 20:43:13.648"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.651" starttime="20180828 20:43:13.647"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 568.184, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390582520&amp;rId=3ERX6ZAB16V7GPQBF0MP&amp;mkId=A21TJRUUN4KGV&amp;h=775050bd...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.653" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 813
+bytesPerSec: 2.86174901088
+endTime: 2018-08-28 20:42:08.525000
+kBytesPerSec: 0.0
+median: 351
+percentil90: 366
+sampleName: https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390582520&amp;rId=3ERX6ZAB16V7GPQBF0MP&amp;mkId=A21TJRUUN4KGV&amp;h=775050bde76a65e0363a9972a29097b899541b8b4aa8c7c64529719e61c1035c
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:32:40.341000
+stddev: 14.5
+throughput: 0.00
+timeTable: [366, 337]
+totalTime: 568.184</msg>
+<status status="PASS" endtime="20180828 20:43:13.653" starttime="20180828 20:43:13.652"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.654" starttime="20180828 20:43:13.651"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 568.155, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/aq-feedback/lazyLoad/handler/af-link-handler.html?pl=%7B%22adPlacementMetaData%22%3A%7B%22pageUrl%22%3A%22aH...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.656" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 2433
+bytesPerSec: 8.56456424743
+endTime: 2018-08-28 20:42:08.868000
+kBytesPerSec: 0.0
+median: 213
+percentil90: 215
+sampleName: https://www.amazon.in/gp/aq-feedback/lazyLoad/handler/af-link-handler.html?pl=%7B%22adPlacementMetaData%22%3A%7B%22pageUrl%22%3A%22aHR0cHM6Ly93d3cuYW1hem9uLmluL3Nob3BwaW5nUG9ydGFsL2Rlc2t0b3AvcmVmPW5hdl9jdXN0cmVjX3NpZ25pbj9fZW5jb2Rpbmc9VVRGOCZvcGZfcmVkaXI9MQ%3D%3D%22%2C%22adElementId%22%3A%22ape_Gateway_right-2_desktop_placement%22%2C%22pageType%22%3A%22Gateway%22%2C%22slotName%22%3A%22right-2%22%7D%2C%22adCreativeMetaData%22%3A%7B%22adProgramId%22%3A%221004%22%2C%22adImpressionId%22%3A%22https%3A%2F%2Faax-eu.amazon-adsystem.com%2Fe%2Fxsp%2Fimp%3Fb%3DQnw3kiy1tWO841DD1qb8Ta4AAAFlfGetFQMAAAH_AfiNSxE%22%2C%22adCreativeId%22%3A%226996784002%22%2C%22adId%22%3A%222831561602%22%2C%22adNetwork%22%3A%22cs%22%7D%7D
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:32:40.713000
+stddev: 1.6
+throughput: 0.00
+timeTable: [212, 215]
+totalTime: 568.155</msg>
+<status status="PASS" endtime="20180828 20:43:13.656" starttime="20180828 20:43:13.655"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.657" starttime="20180828 20:43:13.654"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 568.158, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/overlay/display.html', 'averageBytes': 1280, 'median': 209, 'bytesPerSec': 4.505788882669961, 'samplesErrorN...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.658" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1280
+bytesPerSec: 4.50578888267
+endTime: 2018-08-28 20:42:09.088000
+kBytesPerSec: 0.0
+median: 209
+percentil90: 213
+sampleName: https://www.amazon.in/gp/overlay/display.html
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:32:40.930000
+stddev: 3.5
+throughput: 0.00
+timeTable: [213, 206]
+totalTime: 568.158</msg>
+<status status="PASS" endtime="20180828 20:43:13.659" starttime="20180828 20:43:13.658"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.659" starttime="20180828 20:43:13.657"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 568.15, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/gp/navigation/redirector.html/ref=sign-in-redirect?ie=UTF8&amp;associationHandle=inflex&amp;currentPageURL=https%3A%2F...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.662" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 15076
+bytesPerSec: 53.0704919475
+endTime: 2018-08-28 20:42:11.463000
+kBytesPerSec: 0.1
+median: 769
+percentil90: 780
+sampleName: https://www.amazon.in/gp/navigation/redirector.html/ref=sign-in-redirect?ie=UTF8&amp;associationHandle=inflex&amp;currentPageURL=https%3A%2F%2Fwww.amazon.in%2F%3Fref_%3Dnav_custrec_signin&amp;pageType=Gateway&amp;switchAccount=&amp;yshURL=https%3A%2F%2Fwww.amazon.in%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26ref_%3Dnav_custrec_signin
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:32:43.313000
+stddev: 11.0
+throughput: 0.00
+timeTable: [780, 758]
+totalTime: 568.15</msg>
+<status status="PASS" endtime="20180828 20:43:13.662" starttime="20180828 20:43:13.661"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.663" starttime="20180828 20:43:13.660"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 571.129, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/ap/signin', 'averageBytes': 176477, 'median': 2745, 'bytesPerSec': 617.9952340014253, 'samplesErrorNoAssert': 0...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.664" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 176477
+bytesPerSec: 617.995234001
+endTime: 2018-08-28 20:42:34.904000
+kBytesPerSec: 0.6
+median: 2745
+percentil90: 3733
+sampleName: https://www.amazon.in/ap/signin
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:33:06.775000
+stddev: 988.0
+throughput: 0.00
+timeTable: [1757, 3733]
+totalTime: 571.129</msg>
+<status status="PASS" endtime="20180828 20:43:13.664" starttime="20180828 20:43:13.664"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.664" starttime="20180828 20:43:13.664"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 572.094, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/?ref_=nav_custrec_signin&amp;', 'averageBytes': 213588, 'median': 2188, 'bytesPerSec': 746.6884812635685, 'samplesE...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.664" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 213588
+bytesPerSec: 746.688481264
+endTime: 2018-08-28 20:42:39.279000
+kBytesPerSec: 0.7
+median: 2188
+percentil90: 2220
+sampleName: https://www.amazon.in/?ref_=nav_custrec_signin&amp;
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:33:09.185000
+stddev: 31.5
+throughput: 0.00
+timeTable: [2157, 2220]
+totalTime: 572.094</msg>
+<status status="PASS" endtime="20180828 20:43:13.664" starttime="20180828 20:43:13.664"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.664" starttime="20180828 20:43:13.664"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.155, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390613966&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;h=032edf46...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.664" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1187
+bytesPerSec: 4.16378002473
+endTime: 2018-08-28 20:42:44.792000
+kBytesPerSec: 0.0
+median: 359
+percentil90: 364
+sampleName: https://www.amazon.in/ah/ajax/counter?ctr=desktop_ajax_atf&amp;exp=1535390613966&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;h=032edf46f7b286a02120eff9ea5479788b2fbd179fe1db48b1820a63e01ed1af
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:33:14.637000
+stddev: 5.0
+throughput: 0.00
+timeTable: [354, 364]
+totalTime: 570.155</msg>
+<status status="PASS" endtime="20180828 20:43:13.664" starttime="20180828 20:43:13.664"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.664" starttime="20180828 20:43:13.664"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.158, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsIwEIDhJzpIk_RyGVtBl46i8yW5A7FSoZUivrx1Eqq4-gL_8P2PlXCR8TwN1y_QO5...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.664" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1187
+bytesPerSec: 4.16375811617
+endTime: 2018-08-28 20:42:48.131000
+kBytesPerSec: 0.0
+median: 340
+percentil90: 361
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsIwEIDhJzpIk_RyGVtBl46i8yW5A7FSoZUivrx1Eqq4-gL_8P2PlXCR8TwN1y_QO55k5vvau6kObdPFfVcfN-32l77c_m2TXR1QLQESRvAsARKpQiBTYkFmzHntp8KVw2LAu-TB2zoBWRVQTjaZKLyk3sZzD5chnXoZP7RLUUMiS0iZl5C1QB4FYjC5eHYScngdeQJDyoDl&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=c7f086146e38f15bd9eb134573423df16b12ed0d4fab9569fbe0a2b3c53be74e
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:33:17.973000
+stddev: 20.5
+throughput: 0.00
+timeTable: [320, 361]
+totalTime: 570.158</msg>
+<status status="PASS" endtime="20180828 20:43:13.664" starttime="20180828 20:43:13.664"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.664" starttime="20180828 20:43:13.664"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.199, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?primeContent=prime&amp;metricKey=primeMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWi...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.679" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 3350
+bytesPerSec: 11.7520374466
+endTime: 2018-08-28 20:42:48.495000
+kBytesPerSec: 0.0
+median: 236
+percentil90: 247
+sampleName: https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?primeContent=prime&amp;metricKey=primeMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWidthPrime=0&amp;isPrime=0&amp;dynamicRequest=1&amp;weblabs=&amp;isFreshRegionAndCustomer=&amp;primeMenuWidth=310&amp;_=1535390500265
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:33:18.296000
+stddev: 11.0
+throughput: 0.00
+timeTable: [247, 225]
+totalTime: 570.199</msg>
+<status status="PASS" endtime="20180828 20:43:13.679" starttime="20180828 20:43:13.679"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.679" starttime="20180828 20:43:13.679"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.177, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?wishlistItems=wishlist&amp;alexaItems=alexa&amp;metricKey=alexaMetric&amp;rid=AFK58TVF...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.679" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1102
+bytesPerSec: 3.86546633765
+endTime: 2018-08-28 20:42:48.723000
+kBytesPerSec: 0.0
+median: 206
+percentil90: 209
+sampleName: https://www.amazon.in/gp/navigation/ajax/dynamic-menu.html?wishlistItems=wishlist&amp;alexaItems=alexa&amp;metricKey=alexaMetric&amp;rid=AFK58TVFTJHZRR2K5EAR&amp;isFullWidthPrime=0&amp;isPrime=0&amp;dynamicRequest=1&amp;weblabs=&amp;isFreshRegionAndCustomer=&amp;primeMenuWidth=310&amp;_=1535390501023
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:33:18.546000
+stddev: 2.5
+throughput: 0.00
+timeTable: [204, 209]
+totalTime: 570.177</msg>
+<status status="PASS" endtime="20180828 20:43:13.679" starttime="20180828 20:43:13.679"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.679" starttime="20180828 20:43:13.679"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.184, 'samplesErrorInclAssert': 0, 'sampleName': 'https://www.amazon.in/gp/product/sessionCacheUpdateHandler.html', 'averageBytes': 1375, 'median': 210, 'bytesPerSec': 4.8230045038092...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.679" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1375
+bytesPerSec: 4.82300450381
+endTime: 2018-08-28 20:42:48.935000
+kBytesPerSec: 0.0
+median: 210
+percentil90: 215
+sampleName: https://www.amazon.in/gp/product/sessionCacheUpdateHandler.html
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:33:18.751000
+stddev: 4.5
+throughput: 0.00
+timeTable: [206, 215]
+totalTime: 570.184</msg>
+<status status="PASS" endtime="20180828 20:43:13.679" starttime="20180828 20:43:13.679"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.679" starttime="20180828 20:43:13.679"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.194, 'samplesErrorInclAssert': 0, 'sampleName': 'https://images-eu.ssl-images-amazon.com/images/G/31/img18/Wireless/CEEX/Samsung_Star/Samsung_Star_AE/IN_WLM_Samsung_Star_PC_Bunk_1500...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.679" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 448
+bytesPerSec: 1.5713949989
+endTime: 2018-08-28 20:42:49.153000
+kBytesPerSec: 0.0
+median: 160
+percentil90: 192
+sampleName: https://images-eu.ssl-images-amazon.com/images/G/31/img18/Wireless/CEEX/Samsung_Star/Samsung_Star_AE/IN_WLM_Samsung_Star_PC_Bunk_1500x300_Updated._CB485619899_.jpg
+samplesErrorInclAssert: 0
+samplesErrorNoAssert: 0
+samplesSuccessRateInclAssert: 100
+samplesSuccessRateNoAssert: 100
+startTime: 2018-08-28 20:33:18.959000
+stddev: 32.0
+throughput: 0.00
+timeTable: [128, 192]
+totalTime: 570.194</msg>
+<status status="PASS" endtime="20180828 20:43:13.679" starttime="20180828 20:43:13.679"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.679" starttime="20180828 20:43:13.679"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.256, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE9CsJAEEDhEw3MZPa3TARtUorWs7uzjQGDiYh4eWMlRLH1AK_53mMlXHQ6zefxC_ROZr...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.695" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1187
+bytesPerSec: 4.16304256334
+endTime: 2018-08-28 20:42:51.916000
+kBytesPerSec: 0.0
+median: 344
+percentil90: 349
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE9CsJAEEDhEw3MZPa3TARtUorWs7uzjQGDiYh4eWMlRLH1AK_53mMlXHQ6zefxC_ROZr3Jfe3d0qFr-7jv7XHTbX_p6_XfNoW9zSVaKI4DGGQGQSMQqmQhzRGprv00p4KVKpRmCU2wBClVgmoSmRxyY6N_G08DyDjKRYcPbSde1C8OnDiCcYyQiiowMbrMkdHz68gTM3iAIQ&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=6f777a457753064d1a58a8c114a7e9e20508dfea3196ede1af6f184deeb2d4ae
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:33:21.660000
+stddev: 4.5
+throughput: 0.00
+timeTable: [349, 340]
+totalTime: 570.256</msg>
+<status status="PASS" endtime="20180828 20:43:13.695" starttime="20180828 20:43:13.695"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.695" starttime="20180828 20:43:13.679"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.248, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE7CwIxEATgX7SQx-ZV3gnaXClab5INByoRPBHxzxsrIYqt3VQz8M2jE858OSz1_AV6Qw...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.695" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1187
+bytesPerSec: 4.1631009666
+endTime: 2018-08-28 20:42:55.527000
+kBytesPerSec: 0.0
+median: 353
+percentil90: 361
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdE7CwIxEATgX7SQx-ZV3gnaXClab5INByoRPBHxzxsrIYqt3VQz8M2jE858OSz1_AV6Qwvf6N57D3I3DlPYTma_Gte_9Pn6bxu2zMF4DwKVBxSRwZNrSQWhkTJajL2fMWxSKggkIwHaHCFmEYAwyaJVJMf8Nq7zEeZ64g_ropMupjVYZV0bFAmCL6F1ZVKiaK-zfP3xBP6Ef7U&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614033&amp;h=4583cf48c111fc1c491c6fc94ba617bbaf660451ece1f412ab23c04aaebc0745
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:33:25.279000
+stddev: 8.0
+throughput: 0.00
+timeTable: [345, 361]
+totalTime: 570.248</msg>
+<status status="PASS" endtime="20180828 20:43:13.695" starttime="20180828 20:43:13.695"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.695" starttime="20180828 20:43:13.695"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.267, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdFBCsIwEIXhEw00yUyTLFtBN12KriczGQQXFloR8fLalVDFrSd4_N97rIS1Tuf5Mn6B3v...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.695" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1187
+bytesPerSec: 4.16296226154
+endTime: 2018-08-28 20:42:59.160000
+kBytesPerSec: 0.0
+median: 343
+percentil90: 360
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdFBCsIwEIXhEw00yUyTLFtBN12KriczGQQXFloR8fLalVDFrSd4_N97rIS1Tuf5Mn6B3vFcb3xfe3fu0HdD3g903PTbX_r1-m8bCi65HDyY-ASooQAHDJAEDTEnrKZrPymR0MgBeYyAngyYWoUgjao6a0rht_GrZILTKB_WHjU2hgySHS_TBJlThEqkLfoYvcTljye2hX6h&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=cffa2ad96133c67dc78e573713d334ebf97ed00c7967631ed32561ed60fcca2f
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:33:28.893000
+stddev: 16.5
+throughput: 0.00
+timeTable: [360, 327]
+totalTime: 570.267</msg>
+<status status="PASS" endtime="20180828 20:43:13.695" starttime="20180828 20:43:13.695"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.695" starttime="20180828 20:43:13.695"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.234, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsJADIDhJwpcrklzN7aCLh1F51wuXRwsqIj48raTUMXVF_iH73-uhKtfTtfz9AV6p1...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.695" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1187
+bytesPerSec: 4.16320317624
+endTime: 2018-08-28 20:43:02.757000
+kBytesPerSec: 0.0
+median: 426
+percentil90: 512
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdGxCsJADIDhJwpcrklzN7aCLh1F51wuXRwsqIj48raTUMXVF_iH73-uhKtfTtfz9AV6p1e_62Pt3eGh74a8H_i46be_9P32b5tStWbKCRoOAhQ8gUYjEBYaTQmJ27VfTYmagBVwVAdqqYBidYgcpbUUsUR5G5tPBgvAB3Ya3Tgwg2YzoDwX1eZYEGxCQVGNuAx5ASZQfsc&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=12fa2ade6b71a22f8c5973d85d8d229a295c47ebd289179d30fb14ed7a164d86
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:33:32.523000
+stddev: 85.5
+throughput: 0.00
+timeTable: [512, 341]
+totalTime: 570.234</msg>
+<status status="PASS" endtime="20180828 20:43:13.695" starttime="20180828 20:43:13.695"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.695" starttime="20180828 20:43:13.695"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 570.055, 'samplesErrorInclAssert': 100, 'sampleName': 'https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdExC8JADAXgXxQwTWovYyvo0lF0zt0lS5ET2iLin7dOQhVXx_eGN3zvsRLONg5TuX6BPu...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.711" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1187
+bytesPerSec: 4.16451044197
+endTime: 2018-08-28 20:43:06.366000
+kBytesPerSec: 0.0
+median: 389
+percentil90: 411
+sampleName: https://www.amazon.in/ah/ajax/record-impressions?c4i=ePm_fHprxdExC8JADAXgXxQwTWovYyvo0lF0zt0lS5ET2iLin7dOQhVXx_eGN3zvsRLONg5TuX6BPuhkN72vvVs8dW0vx74-77r9L32b_23ToAUidWCXCNyEDEIpgrOQbhgTCa_9fOncaQvotQEnE4iMGTBXapLVLdHb-FLAYinD-IFNUkeTgGBiCTgrLju2xOQZ3YPGil-HPAG7K4E0&amp;rId=AFK58TVFTJHZRR2K5EAR&amp;mkId=A21TJRUUN4KGV&amp;exp=1535390614034&amp;h=863232111c5bc787af109ab7c43f80af53544f9a626e1ee4fc0e08f1b959994b
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:33:36.311000
+stddev: 22.0
+throughput: 0.00
+timeTable: [411, 367]
+totalTime: 570.055</msg>
+<status status="PASS" endtime="20180828 20:43:13.711" starttime="20180828 20:43:13.711"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.711" starttime="20180828 20:43:13.695"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 584.169, 'samplesErrorInclAssert': 100, 'sampleName': 'Test', 'averageBytes': 1343034, 'median': 16536, 'bytesPerSec': 4598.10089203638, 'samplesErrorNoAssert': 100, 'throughput': '0.00'...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.711" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 1343034
+bytesPerSec: 4598.10089204
+endTime: 2018-08-28 20:41:56.696000
+kBytesPerSec: 4.6
+median: 16536
+percentil90: 17949
+sampleName: Test
+samplesErrorInclAssert: 100
+samplesErrorNoAssert: 100
+samplesSuccessRateInclAssert: 0
+samplesSuccessRateNoAssert: 0
+startTime: 2018-08-28 20:32:29.527000
+stddev: 1412.5
+throughput: 0.00
+timeTable: [15124, 17949]
+totalTime: 584.169</msg>
+<status status="PASS" endtime="20180828 20:43:13.711" starttime="20180828 20:43:13.711"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.711" starttime="20180828 20:43:13.711"></status>
+</kw>
+<kw type="foritem" name="${ELEMENT} = {'totalTime': 636.755, 'samplesErrorInclAssert': 53, 'sampleName': 'TOTAL', 'averageBytes': 141372, 'median': 351, 'bytesPerSec': 8436.739405265762, 'samplesErrorNoAssert': 53, 'throughput': '0.06', '...">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20180828 20:43:13.711" level="INFO">Dictionary size is 16 and it contains following items:
+averageBytes: 141372
+bytesPerSec: 8436.73940527
+endTime: 2018-08-28 20:43:06.366000
+kBytesPerSec: 8.4
+median: 351
+percentil90: 7178
+sampleName: TOTAL
+samplesErrorInclAssert: 53
+samplesErrorNoAssert: 53
+samplesSuccessRateInclAssert: 47
+samplesSuccessRateNoAssert: 47
+startTime: 2018-08-28 20:32:29.611000
+stddev: 3825.9
+throughput: 0.06
+timeTable: [6203, 366, 212, 213, 780, 1757, 2157, 354, 320, 247, 204, 206, 128, 349, 345, 360, 512, 411, 15124, 7178, 337, 215, 206, 758, 3733, 2220, 364, 361, 225, 209, 215, 192, 340, 361, 327, 341, 367, 17949]
+totalTime: 636.755</msg>
+<status status="PASS" endtime="20180828 20:43:13.711" starttime="20180828 20:43:13.711"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.711" starttime="20180828 20:43:13.711"></status>
+</kw>
+<status status="PASS" endtime="20180828 20:43:13.711" starttime="20180828 20:43:13.641"></status>
+</kw>
+<tags>
+<tag>Performance</tag>
+</tags>
+<status status="PASS" endtime="20180828 20:43:13.711" critical="yes" starttime="20180828 20:41:48.501"></status>
+</test>
+<status status="PASS" endtime="20180828 20:43:13.725" starttime="20180828 20:40:25.674"></status>
+</suite>
+<status status="PASS" endtime="20180828 20:43:13.726" starttime="20180828 20:40:25.674"></status>
+</suite>
+<status status="PASS" endtime="20180828 20:43:13.742" starttime="20180828 20:40:25.643"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="3">Performance</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="CME-QA AutomationFramework" pass="3">CME-QA AutomationFramework</stat>
+<stat fail="0" id="s1-s1" name="01 Testathon TestSuites" pass="3">CME-QA AutomationFramework.01 Testathon TestSuites</stat>
+<stat fail="0" id="s1-s1-s1" name="01 PER AmazonHome" pass="3">CME-QA AutomationFramework.01 Testathon TestSuites.01 PER AmazonHome</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
