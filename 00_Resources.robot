@@ -39,7 +39,7 @@ ${SEARCH_PRODUCT}  car for kids toys
 #Directories
 ###############################################################################################
 ${INPUT_DIR}  D:/00_Workspace/04_RobotFrameWork/01_Python/CME-QA_AutomationFramework/01_Testathon_TestSuites/02_Inputs/
-${OUTPUT_DIR}  D:/00_Workspace/04_RobotFrameWork/01_Python/CME-QA_AutomationFramework/Outputs/
+${OUTPUT_RESULTS_DIR}  D:/00_Workspace/04_RobotFrameWork/01_Python/CME-QA_AutomationFramework/01_Testathon_TestSuites/03_Results/
 ###############################################################################################
 #Executable locations
 ###############################################################################################
